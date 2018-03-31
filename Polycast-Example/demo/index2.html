@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>polycast-Example demo</title>
+
+    <script src="../../webcomponentsjs/webcomponents-loader.js"></script>
+
+    <link rel="import" href="../bower_components/iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../bower_components/iron-demo-helpers/demo-snippet.html">
+
+    <link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
+    <link rel="import" href="../bower_components/app-layout/app-toolbar/app-header.html">
+    <link rel="import" href="../bower_components/app-layout/app-grid/app-grid-style.html">
+
+    <link rel="import" href="../polycast-example.html">
+
+    <custom-style>
+      <style is="custom-style">
+
+        body {
+          /* No margin on body so toolbar can span the screen */
+          margin: 0;
+        }
+        app-toolbar {
+          /* Toolbar is the main header, so give it some color */
+          background-color: #1E88E5;
+          font-family: 'Roboto', Helvetica, sans-serif;
+          color: white;
+          --app-toolbar-font-size: 24px;
+        }
+
+        demo-snippet {
+          --demo-snippet-demo: {
+            background: var(--paper-grey-200);
+            padding: 16px;
+          };
+          --demo-snippet-code: {
+            max-height: 300px;
+          }
+        }
+      </style>
+    </custom-style>
+
+
+
+
+  </head>
+  <body class="fullbleed vertical layout">
+
+    <app-header fixed condenses effects="waterfall">
+        <app-toolbar>
+          <div spacer main-title>Empathy cards</div>
+        </app-toolbar>
+    </app-header>
+
+
+    <div>
+      <polycast-example></polycast-example>
+    </div>
+
+
+  </body>
+</html>
