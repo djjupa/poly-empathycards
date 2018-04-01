@@ -8,7 +8,6 @@
 <link rel="import" href="bower_components/iron-selector/iron-selector.html">
 <link rel="import" href="bower_components/iron-collapse/iron-collapse.html">
 
-
 <link rel="import" href="bower_components/paper-input/paper-input.html">
 <link rel="import" href="bower_components/paper-button/paper-button.html">
 <link rel="import" href="bower_components/paper-card/paper-card.html">
@@ -42,14 +41,10 @@
 
         #cards > paper-card {
           box-sizing: border-box;
-          max-width: 300px;
+          max-width: 500px;
           margin: 10px;
           flex: 0 0 auto;
           display: inline-block;
-        }
-
-        .vertical-section-container {
-          max-width: 400px;
         }
 
         paper-card {
@@ -85,6 +80,23 @@
         .dark {
           background: var(--paper-blue-grey-500);
         }
+        /* Colour the cards according to the comment satisfaction score (5-1)*/
+        .sat-very-satisfied{
+          background: var(--paper-blue-grey-500);
+        }
+        .sat-somewhat-satisfied{
+          background: var(--paper-blue-grey-500);
+        }
+        .sat-neither-satisfied{
+          background: var(--paper-blue-grey-500);
+        }
+        .sat-somewhat-dissatisfied{
+          background: var(--paper-blue-grey-500);
+        }
+        .sat-vert-dissatisfied{
+          background: var(--paper-blue-grey-500);
+        }
+
         paper-card.dark, paper-card.amber, paper-card.lime, paper-card.cyan {
           color: white;
           --paper-card-header-color: white;
@@ -110,6 +122,15 @@
 
 
 <div id="cards" class="app-grid">
+  <paper-card class="cyan">
+    <div class="card-actions">
+      <div>
+        <paper-icon-button icon="communication:call" style="color:white;"></paper-icon-button>
+      </div>
+      <span>March 19, 2017</span>
+    </div>
+  </paper-card>
+
   <paper-card heading="Call Jennifer" class="cyan">
     <div class="card-actions">
       <paper-icon-button icon="communication:call" style="color:white;"></paper-icon-button>
