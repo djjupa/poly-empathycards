@@ -7,6 +7,7 @@
 <link rel="import" href="bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="bower_components/iron-selector/iron-selector.html">
 <link rel="import" href="bower_components/iron-collapse/iron-collapse.html">
+<link rel="import" href="bower_components/iron-label/iron-label.html">
 
 <link rel="import" href="bower_components/paper-input/paper-input.html">
 <link rel="import" href="bower_components/paper-button/paper-button.html">
@@ -81,19 +82,19 @@
           background: var(--paper-blue-grey-500);
         }
         /* Colour the cards according to the comment satisfaction score (5-1)*/
-        .sat-very-satisfied{
+        .sat-very-satisfied {
           background: var(--paper-blue-grey-500);
         }
-        .sat-somewhat-satisfied{
+        .sat-somewhat-satisfied {
           background: var(--paper-blue-grey-500);
         }
-        .sat-neither-satisfied{
+        .sat-neither-satisfied {
           background: var(--paper-blue-grey-500);
         }
-        .sat-somewhat-dissatisfied{
+        .sat-somewhat-dissatisfied {
           background: var(--paper-blue-grey-500);
         }
-        .sat-vert-dissatisfied{
+        .sat-vert-dissatisfied {
           background: var(--paper-blue-grey-500);
         }
 
@@ -122,16 +123,26 @@
 
 
 <div id="cards" class="app-grid">
-  <paper-card class="cyan">
-    <div class="card-actions">
-      <div>
-        <paper-icon-button icon="communication:call" style="color:white;"></paper-icon-button>
-      </div>
-      <span>March 19, 2017</span>
+  <paper-card class="dark" animated-shadow="true">
+    <div class="satisfaction">
+
     </div>
+
+    <div class="card-content" >
+           <iron-label>Label 1</iron-label>
+           <iron-label> Label 2</iron-label>
+
+    </div>
+     <div class="card-actions">
+       <paper-button>Vote Up!</paper-button>
+       <paper-button>Vote Down</paper-button>
+     </div>
   </paper-card>
 
-  <paper-card heading="Call Jennifer" class="cyan">
+
+
+
+  <paper-card heading="Call Jennifer" class="cyan" animated-shadow="true">
     <div class="card-actions">
       <paper-icon-button icon="communication:call" style="color:white;"></paper-icon-button>
       <span>March 19, 2017</span>
