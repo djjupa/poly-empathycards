@@ -17,120 +17,166 @@
 <link rel="import" href="bower_components/paper-styles/color.html">
 <link rel="import" href="bower_components/paper-styles/typography.html">
 
+<!-- Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab">
+
+
 <dom-module id="polycast-example">
 
   <template>
-    <style is="custom-style" include="app-grid-style">
-      :host {
-        --app-grid-columns: 3;
-        --app-grid-gutter: 3px;
-        --app-grid-item-height: auto;
-      }
-      .task {
-         display: flex;
-         align-items: center;
-      }
-
-      paper-input{
-        display: inline-block;
-      }
-
-        #cards {
-          @apply --layout-wrap;
-          height: 344px;
+    </custom-style>
+      <style is="custom-style" include="app-grid-style">
+        :host {
+          --app-grid-columns: 3;
+          --app-grid-gutter: 3px;
+          --app-grid-item-height: auto;
+        }
+        .task {
+           display: flex;
+           align-items: center;
         }
 
-        #cards > paper-card {
-          box-sizing: border-box;
-          max-width: 500px;
-          margin: 10px;
-          flex: 0 0 auto;
+        paper-input{
           display: inline-block;
         }
 
-        paper-card {
-          width: 100%;
-          margin: 10px;
-          display: inline-block;
-        }
+          #cards-grid {
+            @apply --layout-wrap;
+            height: auto;
+          }
 
-        .horizontal {
-          @apply --layout-horizontal;
-        }
+          #cards-grid > paper-card {
+            max-width: 500px;
+            box-sizing: border-box;
+            margin: 10px;
+            display: inline-block;
+            font-family: 'Roboto Slab', serif;
+          }
 
-        .flex {
-          @apply --layout-flex;
-        }
+          paper-card {
+            flex: 0 0 auto;
+          }
 
-        .justified {
-          @apply --layout-justified;
-        }
+          .horizontal {
+            @apply --layout-horizontal;
+          }
 
-        .amber {
-          background: var(--paper-amber-900);
-        }
+          .flex {
+            @apply --layout-flex;
+          }
 
-        .lime {
-          background: var(--paper-lime-500);
-        }
+          .justified {
+            @apply --layout-justified;
+          }
 
-        .cyan {
-          background: var(--paper-cyan-500);
-        }
+          .white {
+            background: var(--paper-white-900);
+          }
 
-        .dark {
-          background: var(--paper-blue-grey-500);
-        }
-        /* Colour the cards according to the comment satisfaction score (5-1)*/
-        .sat-very-satisfied {
-          background: var(--paper-blue-grey-500);
-        }
-        .sat-somewhat-satisfied {
-          background: var(--paper-blue-grey-500);
-        }
-        .sat-neither-satisfied {
-          background: var(--paper-blue-grey-500);
-        }
-        .sat-somewhat-dissatisfied {
-          background: var(--paper-blue-grey-500);
-        }
-        .sat-vert-dissatisfied {
-          background: var(--paper-blue-grey-500);
-        }
+          .amber {
+            background: var(--paper-amber-900);
+          }
 
-        paper-card.dark, paper-card.amber, paper-card.lime, paper-card.cyan {
-          color: white;
-          --paper-card-header-color: white;
-        }
+          .lime {
+            background: var(--paper-lime-500);
+          }
 
-        paper-checkbox {
-          display: block;
-          margin-bottom: 4px;
-          --paper-checkbox-label-color: white;
-          --paper-checkbox-unchecked-color: white;
-        }
+          .cyan {
+            background: var(--paper-cyan-500);
+          }
 
-        paper-icon-button {
-          color: var(--paper-grey-600);
-        }
+          .dark {
+            background: var(--paper-blue-grey-500);
+          }
+          /* Colour the cards according to the comment satisfaction score (5-1)*/
+          .sat-very-satisfied {
+            background: var(--paper-blue-grey-500);
+          }
+          .sat-somewhat-satisfied {
+            background: var(--paper-blue-grey-500);
+          }
+          .sat-neither-satisfied {
+            background: var(--paper-blue-grey-500);
+          }
+          .sat-somewhat-dissatisfied {
+            background-color: #E6B8AFFF;
+          }
+          .sat-vert-dissatisfied {
+            background: var(--paper-blue-grey-500);
+          }
 
-        paper-icon-button.white {
-          color: white !important;
-        }
+          paper-card.dark, paper-card.amber, paper-card.lime, paper-card.cyan {
+            color: white;
+            --paper-card-header-color: white;
+          }
 
-    </style>
+          paper-checkbox {
+            display: block;
+            margin-bottom: 4px;
+            --paper-checkbox-label-color: white;
+            --paper-checkbox-unchecked-color: white;
+          }
+
+          paper-icon-button {
+            color: var(--paper-grey-600);
+          }
+
+          paper-icon-button.white {
+            color: white !important;
+          }
+
+          .satisfaction-bar {
+            height: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /*
+            line-height: 10%;
+            vertical-align: b;
+            */
+            color: #fff;
+          }
+
+          .card-content {
+            font-style: italic;
+            font-size: 24px;
+          }
+
+          .subrow {
+            color: #9B9B9B;
+          }
+
+          .card-actions {
+            padding: 5%;
+          }
+      </style>
+    </custom-style>
 
 
-
-<div id="cards" class="app-grid">
-  <paper-card class="dark" animated-shadow="true">
-    <div class="satisfaction">
+<div id="cards-grid" class="app-grid">
+  <paper-card class="white" animated-shadow="true">
+    <div class="satisfaction-bar sat-somewhat-dissatisfied" >
+      Satisfaction
+    </div>
+    <div class="subrow">
+      <div style="float:left">
+        Geo
+      </div>
+      <div style="float:none">
+        Company
+      </div>
+      <div style="float:right">
+        YYYY-MM-DD HH:SS
+      </div>
 
     </div>
 
     <div class="card-content" >
-           <iron-label>Label 1</iron-label>
-           <iron-label> Label 2</iron-label>
+       <p self-center>
+         ability to record is gone no phone numbers without paying thousands more for enterprise let me just buy phone access as many of my people cannot or won't do voip it's definitely no substitute for uberconference vs gotomeeting yet
+       </p>
+    </div>
+    <div>
 
     </div>
      <div class="card-actions">
@@ -138,8 +184,6 @@
        <paper-button>Vote Down</paper-button>
      </div>
   </paper-card>
-
-
 
 
   <paper-card heading="Call Jennifer" class="cyan" animated-shadow="true">
